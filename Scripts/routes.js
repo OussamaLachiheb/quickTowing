@@ -3,12 +3,12 @@
       $routeProvider.
 
       when('/incidents', {
-          templateUrl: '../views/incidents.html',
+          templateUrl: '../admin/incidents.html',
           controller: 'incidentsController'
       }).
 
       when('/clients', {
-          templateUrl: '../views/clients.html',
+          templateUrl: '../admin/clients.html',
           controller: 'clientsController'
       }).
 
