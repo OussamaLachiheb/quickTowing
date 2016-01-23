@@ -13,6 +13,6 @@
       }).
 
       otherwise({
-          redirectTo: '/addStudent'
+          redirectTo: '/clients'
       });
   }]);
