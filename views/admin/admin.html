@@ -21,8 +21,7 @@
 
     <!-- REQUIRED JS SCRIPTS -->
     <!-- Angular client controller -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    
     <!-- jQuery 2.1.4 -->
     <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
@@ -32,7 +31,7 @@
 
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini" ng-app="TowingApp">
+<body class="hold-transition skin-blue sidebar-mini" ng-app="towingApp">
     <div class="wrapper">
 
         <!-- Main Header -->
@@ -115,7 +114,7 @@
                     <!-- Optionally, you can add icons to the links -->
                     <li><a href="#clients"><i class="fa fa-link"></i> <span>Clients</span></a></li>
                     <li><a href="#incidents"><i class="fa fa-link"></i> <span>incidents</span></a></li>
-                    <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+                    <li><a href="#addclient"><i class="fa fa-link"></i> <span>Ajouter client</span></a></li>
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
@@ -126,7 +125,11 @@
         <div ng-view class="content-wrapper">
 
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+
         <script src="../../Scripts/routes.js"></script>
+        
         <!-- /.content-wrapper -->
 
         <!-- Main Footer -->
