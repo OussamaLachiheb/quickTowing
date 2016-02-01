@@ -1,6 +1,5 @@
   var towingApp = angular.module("towingApp", ['ngRoute']);
   towingApp.config(['$routeProvider','$controllerProvider', function($routeProvider, $controllerProvider) {
-
       //register all controllers
       towingApp.registerCrtl=$controllerProvider.register;
       $routeProvider.
