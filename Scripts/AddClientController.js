@@ -2,7 +2,7 @@ towingApp.registerCrtl('AddClientController', function($scope, $http) {
     $scope.client = {};
     // calling our submit function.
     $scope.submitForm = function() {
-        console.log($scope.client)
+        
         $http({
                 method: 'POST',
                 url: 'http://localhost:4465/api/client',
