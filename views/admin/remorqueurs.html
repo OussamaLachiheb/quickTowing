@@ -1,4 +1,4 @@
-<script src="../../Scripts/clientsController.js">
+<script src="../../Scripts/RemorqueursController.js">
 </script>
 <section class="content-header">
     <h1>
@@ -7,7 +7,7 @@
 </section>
 
 <!-- Main content -->
-<section class="content" ng-controller="clientsController">
+<section class="content" ng-controller="RemorqueursController">
     <div class="box box-warning">
         <li><a href="#addremorqueur"><i class="fa fa-link"></i> <span>Nouveau remorqueur</span></a></li>
         <div class="box-header with-border">
@@ -15,28 +15,29 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-  
+
 
             <table class="table table-bordered table-striped">
                 <thead>
-                    <tr >
-                        <th>Cin</th>
+                    <tr>
+                        <th>Matricule</th>
                         <th>Nom et prénom</th>
                         <th>Numéro Telephone</th>
-                        <th>Adresse electronique</th>
+                        <th>Adresse électronique</th>
                         <th>action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="client in clients">
-                    <td>{{client.cin}}</td>
-                    <td>{{client.nom}} {{client.prenom}}</td>
-                    <td>{{client.email}}</td>
-                    <td>{{client.tel}}</td>
-                    <td>actions</td>
+                    <tr ng-repeat="remorqueur in remorqueurs">
+                        <td>{{remorqueur.matricule}}</td>
+                        <td>{{remorqueur.nom}} {{remorqueur.prenom}}</td>
+                        <td>{{remorqueur.tel}}</td>
+                        <td>{{remorqueur.email}}</td>
+
+                        <td>actions</td>
                     </tr>
                 </tbody>
-                
+
             </table>
         </div>
     </div>

@@ -3,9 +3,6 @@ towingApp.registerCrtl('AddRemController', function($scope, $http, $timeout, NgM
     NgMap.getMap().then(function(map) {
         console.log('markers', map.markers);
         console.log('shapes', map.shapes);
-        //$scope.position = map.shapes.circle.center.lat();
-        //$scope.position2 = map.shapes.circle.center.lng();
-        //shape = map.shapes[0];
         $scope.centerChanged = function(event) {
         $timeout(function() {
             $scope.remorqueur.latitude = map.center.lat();
@@ -33,6 +30,8 @@ towingApp.registerCrtl('AddRemController', function($scope, $http, $timeout, NgM
                 } else {
                     $scope.message_rem = 'Enregistrement effectué avec succées';
                     $scope.remorqueur = {};
+                    //scroll to top
+                    window.scrollTo(0,0);
                 }
             });
     };
