@@ -1,0 +1,56 @@
+<!-- Content Header (Page header) -->
+<script src="../../Scripts/AddClientController.js"></script>
+<section class="content-header">
+    <h1>Espace Administrateur</h1>
+</section>
+
+<!-- Main content -->
+<section class="content" >
+
+    <!-- general form elements disabled -->
+    <div class="box box-warning">
+        <div class="box-header with-border">
+            <h3 class="box-title">Nouveau remorqueur</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body" ng-controller="AddClientController">  
+                      
+            <form role="form" name="userForm" ng-submit="submitForm()">
+                <!-- Validation messages for both error and success -->
+                <div class="alert alert-success" ng-show='message !=null'>{{message}}</div>
+            <div class="alert alert-danger" ng-show='notok !=null' >{{notok}}</div>  
+                <div class="form-group">
+                    <label>Cin</label>
+                    <input type="text" class="form-control" name="cin" pattern="[0-9]{8}" placeholder="Carte d'identité" ng-model="client.cin" required>
+                </div>
+               <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" class="form-control" name="nom" placeholder="Nom" ng-model="client.nom" required>
+                </div>
+                <div class="form-group">
+                    <label>Prénom</label>
+                    <input type="text" class="form-control" name="prenom" placeholder="Prénom" ng-model="client.prenom" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Votre adresse electronique" ng-model="client.email" >
+                </div>
+                <div class="form-group">
+                    <label>Teléphone</label>
+                    <input type="text" class="form-control" name="tel"  pattern="[0-9]{8}" placeholder="Numero du tel" ng-model="client.tel" required>
+                </div>
+
+               <div class="form-group">
+                    <label>Mot de passe</label>
+                    <input type=password class="form-control" name="password" placeholder="Enter ..." ng-model="client.password" required>
+                </div>
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                
+                
+                
+            </form>
+            
+</section>

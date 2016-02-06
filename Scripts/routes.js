@@ -13,6 +13,14 @@
           templateUrl: '../admin/clients.html',
           
       }).
+      when('/remorqueurs', {
+          templateUrl: '../admin/remorqueurs.html',
+          
+      }).
+      when('/addremorqueur', {
+          templateUrl: '../admin/ajouterRemorqueur.html',
+          
+      }).
       
       when('/addclient', {
           templateUrl: '../admin/ajouterClient.html',
