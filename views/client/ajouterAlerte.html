@@ -1,60 +1,47 @@
 <!-- Content Header (Page header) -->
-<script src="../../Scripts/AddRemController.js"></script>
+<script src="../../Scripts/AddAlerteController.js"></script>
 
 <section class="content-header">
-    <h1>Espace Administrateur</h1>
+    <h1>Espace Abonné</h1>
 </section>
 
 <!-- Main content -->
 <section class="content">
-
-    <!-- general form elements disabled -->
     <div class="box box-warning">
         <div class="box-header with-border">
-            <h3 class="box-title">Nouveau remorqueur</h3>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body" ng-controller="AddRemController">
+            <h3 class="box-title">Signaler une alerte</h3>
+        </div>        
+        <div class="box-body" ng-controller="AddAlerteController">
 
-            <form role="form" name="userForm" ng-submit="submitForm()">
+            <form role="form" name="AlertForm" ng-submit="submitForm()">
                 <!-- Validation messages for both error and success -->
-                <div class="alert alert-success" ng-show='message_rem !=null'>{{message_rem}}</div>
-                <div class="alert alert-danger" ng-show='notok_rem !=null'>{{notok_rem}}</div>
+                <div class="alert alert-success" ng-show='message_alerte !=null'>{{message_alerte}}</div>
+                <div class="alert alert-danger" ng-show='notok_alerte !=null'>{{notok_alerte}}</div>
                 <div class="form-group">
-                    <label>Matricule</label>
-                    <input type="text" class="form-control" name="Matricule" pattern="[0-9]{4}" placeholder="Matricule" ng-model="remorqueur.matricule" required>
+                    <label>Cin</label>
+                    <input type="text" class="form-control" disabled="true" name="cin"  ng-model="alerte.cin" required>
                 </div>
                 <div class="form-group">
-                    <label>Nom</label>
-                    <input type="text" class="form-control" name="nom" placeholder="Nom" ng-model="remorqueur.nom" required>
+                    <label>Message</label>
+                <textarea class="form-control" name="message" placeholder="Description de la panne" ng-model="alerte.message" required></textarea>
+                    
                 </div>
                 <div class="form-group">
-                    <label>Prénom</label>
-                    <input type="text" class="form-control" name="prenom" placeholder="Prénom" ng-model="remorqueur.prenom" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Votre adresse electronique" ng-model="remorqueur.email">
-                </div>
-                <div class="form-group">
-                    <label>Teléphone</label>
-                    <input type="text" class="form-control" name="tel" pattern="[0-9]{8}" placeholder="Numero du tel" ng-model="remorqueur.tel" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Mot de passe</label>
-                    <input type=password class="form-control" name="password" placeholder="Enter ..." ng-model="remorqueur.password" required>
-                </div>
+                    <label>Date</label>
+                    <input type="text" class="form-control" name="Date" disabled="true"  ng-model="alerte.date" required>
+                </div>                                
                 <div class="form-group">
                     <label>Longtitude</label>
-                    <input type="text" class="form-control" name="prenom" placeholder="Longtitude" ng-model="remorqueur.longitude" ng-bind="position" required>
+    <input type="text" class="form-control" disabled="true" name="longtitude" placeholder="Longtitude" ng-model="alerte.longitude" required>
                 </div>
                 <div class="form-group">
-                    <label>Latitude</label>
-                    <input type="text" class="form-control" name="prenom" placeholder="Latitude" ng-model="remorqueur.latitude" required>
+                <label>Latitude</label>
+            <input type="text" class="form-control" disabled="true" name="latitude" placeholder="Latitude" ng-model="alerte.latitude" required>
                 </div>
                 <div map-lazy-load="https://maps.google.com/maps/api/js">
-                    <ng-map center="current" zoom="8" on-center-changed="centerChanged()"></ng-map>
+                    <ng-map center="current" zoom="8" on-center-changed="centerChanged()">
+                        <marker position="current"  centered="true"></marker>
+                    </ng-map>
 
                 </div>
 
