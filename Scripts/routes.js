@@ -26,8 +26,17 @@ var towingApp = angular.module("towingApp", ['ngRoute','ngMap']);
           templateUrl: '../admin/ajouterClient.html',
           
       }).
+      when('/addalerte', {
+          templateUrl: '../client/ajouterAlerte.html',
+          
+      }).
+      when('/alertes', {
+          templateUrl: '../client/alertesClient.html',
+          
+      }).
+
 
       otherwise({
-          redirectTo: '/incidents'
+          redirectTo: '/welcome'
       });
   }]);
