@@ -18,9 +18,10 @@ towingApp.registerCrtl('AddClientController', function($scope, $http) {
                 } else {
                     $scope.message='Enregistrement effectué avec succées';
                     $scope.client={};
-                    //scroll to top
-                    window.scrollTo(0,0);
+                    
                 }
+            //scroll to top
+            window.scrollTo(0,0);
             });
     };
 });

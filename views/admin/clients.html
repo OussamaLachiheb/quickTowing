@@ -21,9 +21,12 @@
                 <thead>
                     <tr >
                         <th>Cin</th>
-                        <th>Nom et prénom</th>
-                        <th>Numéro Telephone</th>
-                        <th>Adresse électronique</th>
+                        <th>Client</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Nature</th>
+                        <th>Marque Véhicule</th>
+                        <th>Modèle</th>
                         <th>action</th>
                     </tr>
                 </thead>
@@ -32,8 +35,11 @@
                     <td>{{client.cin}}</td>
                     <td>{{client.nom}} {{client.prenom}}</td>
                     <td>{{client.tel}}</td>
-                    <td>{{client.email}}</td>                    
-                    <td>actions</td>
+                    <td>{{client.email}}</td>
+                    <td>{{client.nature_veh}}</td>    
+                    <td>{{client.marque_veh}}</td>    
+                    <td>{{client.modele_veh}}</td>    
+                    <td><button class="btn btn-primary btn-sm">Modifier</button>   <button class="btn btn-primary btn-sm">Supprimer</button></td>
                     </tr>
                 </tbody>
                 
