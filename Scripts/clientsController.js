@@ -1,4 +1,4 @@
-towingApp.registerCrtl('clientsController', function($scope, $http) {
+towingApp.registerCrtl('clientsController', function($scope, $http, ngDialog) {
     $http({
             method: 'GET',
             url: 'http://localhost:4465/api/client',
@@ -11,6 +11,10 @@ towingApp.registerCrtl('clientsController', function($scope, $http) {
                 $scope.clients = data;
 
             }
+        $scope.editrow=function(){
+       ngDialog.open({ template: 'templateId' });
+       
+        }
         });
 
 });

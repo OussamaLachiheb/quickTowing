@@ -8,6 +8,11 @@
 
 <!-- Main content -->
 <section class="content" ng-controller="clientsController">
+    <!-- Fenetre modifier -->
+<script type="text/ng-template" id="templateId">
+    <h1>Template heading</h1>
+    <p>Content goes here</p>
+</script>
     <div class="box box-warning">
         <li><a href="#addclient"><i class="fa fa-link"></i> <span>Nouveau client</span></a></li>
         <div class="box-header with-border">
@@ -39,7 +44,10 @@
                     <td>{{client.nature_veh}}</td>    
                     <td>{{client.marque_veh}}</td>    
                     <td>{{client.modele_veh}}</td>    
-                    <td><button class="btn btn-primary btn-sm">Modifier</button>   <button class="btn btn-primary btn-sm">Supprimer</button></td>
+                        <td>
+                        <button class="btn btn-primary btn-sm" ng-click='editrow()'>Modifier</button>
+                        <button class="btn btn-primary btn-sm">Supprimer</button>
+                        </td>
                     </tr>
                 </tbody>
                 
