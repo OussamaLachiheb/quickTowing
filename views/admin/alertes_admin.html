@@ -1,0 +1,71 @@
+<script src="../../Scripts/AdminAlertesController.js">
+</script>
+<section class="content-header">
+    <h1> Espace Administrateur</h1>
+</section>
+
+<!-- Main content -->
+<section class="content" ng-controller="AdminAlertesController">
+    <!-- Fenetre modifier -->
+<script type="text/ng-template" id="templateId">
+    <h1>Template heading</h1>
+    <p>Content goes here</p>
+</script>
+    <div class="box box-warning">
+        
+        <div class="box-header with-border">
+            <h3 class="box-title">Tous les alertes</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body" >
+  
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr >
+                        <th>Cin</th>
+                        <th>Date</th>
+                        <th>Etat</th>
+                        <th>Message</th>
+                        <th>Remorqueur</th>
+                        <th>Actions</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="alerte in myAlertes">
+                    <td>{{alerte.cin}}</td>
+                    <td>{{alerte.date}}</td>
+                    <td>{{alerte.etat}}</td>
+                    <td>{{alerte.message}}</td> 
+                    <td>{{alerte.matricule}}</td>  
+                        <td>                        
+                        <button class="btn btn-primary btn-sm" ng-click='deletealerte(alerte.Id)' ng-if="alerte.etat==='Nouveau'">Annuler</button>
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+    <!-- Dialog de suppression-->
+      <div id="deleterow" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div  class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Annuler Alerte</h4>
+      </div>
+      <div class="modal-body">
+        <p>Voulez vous annuler cette alerte ? </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button class="btn btn-primary btn-sm" ng-click='confirmdelete()'>Confirmer</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+ </section>
