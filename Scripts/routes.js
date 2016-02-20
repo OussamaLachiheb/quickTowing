@@ -42,7 +42,10 @@ var towingApp = angular.module("towingApp", ['ngRoute','ngMap','ngCookies']);
           templateUrl: '../client/alertesClient.html',
           
       }).
-
+      when('/remorqueuralertes', {
+          templateUrl: '../remorqueur/remorqueur_alertes.html',
+          
+      }).
 
       otherwise({
           redirectTo: '/welcome'

@@ -24,8 +24,8 @@ towingApp.controller('RemorqueurCookieController', ['$scope', '$http', '$cookies
     $scope.GetRemorqueur= function () {
 
         $http({
-            method: 'Get',
-            url: 'http://localhost:4465/api/client/ByMatricule/' + $cookies.get("userId"),
+            method: 'GET',
+            url: 'http://localhost:4465/api/remorqueur/ByMatricule/' + $cookies.get("userId"),
 
         })
         .success(function (data, status, headers, config) {
@@ -33,5 +33,5 @@ towingApp.controller('RemorqueurCookieController', ['$scope', '$http', '$cookies
             $scope.remorqueur = data;
         });
     };
-  
+  $scope.GetRemorqueur();
 }]);
