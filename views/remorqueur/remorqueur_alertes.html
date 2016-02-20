@@ -42,7 +42,7 @@
                         <td>{{alerte.etat}}</td>
                         <td>{{alerte.message}}</td>
                         <td>
-                            <button class="btn btn-success btn-sm" ng-click='editalerte(alerte,"En cours de traitement")' ng-show="alerte.etat==='Nouveau'">Commencer</button>
+                            <button class="btn btn-success btn-sm" ng-click='editalerte(alerte,"En cours de traitement")' ng-show="alerte.etat==='Recherche Terminé'">Commencer</button>
                             <button class="btn btn-primary btn-sm" ng-click='editalerte(alerte,"Traitement terminé")' ng-show="alerte.etat==='En cours de traitement'">Terminer</button>
                             <span class="btn btn-warning btn-sm" ng-show="alerte.etat==='Traitement terminé'">En cours de Validation</span>
                         </td>

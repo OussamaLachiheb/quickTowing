@@ -3,7 +3,7 @@ towingApp.registerCrtl('RemorqueurAlertesController',function($scope, $http, $co
     $scope.getAllAlerte=function(){
         $http({
             method: 'GET',
-            url: 'http://localhost:4465/api/Remorqueur/Interventions/' + $cookies.get("userId")
+            url: 'http://localhost:4465/api/Remorqueur/Interventions/' + $cookies.get("userId")+'/All'
         })
         .success(function(data, status, headers, config) {
             if (data.errors) {
