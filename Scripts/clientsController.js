@@ -45,7 +45,7 @@ delete $scope.client.Alertes;
             //scroll to top
             window.scrollTo(0,0);
             });
-    //$http.put('http://localhost:4465/api/client/Update/'+$scope.client.cin);
+    
 }
 //ouvrir le message de confirmation de suppression
 $scope.deleteclient=function(cin){
