@@ -40,7 +40,7 @@
                     <td>{{alerte.etat}}</td>
                     <td>{{alerte.message}}</td>                        
                         <td>                        
-                        <button class="btn btn-primary btn-sm" ng-click='' ng-if="alerte.etat==='Nouveau'">Annuler</button>
+                        <button class="btn btn-primary btn-sm" ng-click='deletealerte(alerte.Id)' ng-if="alerte.etat==='Nouveau'">Annuler</button>
                         </td>
                     </tr>
                 </tbody>
@@ -48,6 +48,24 @@
             </table>
         </div>
     </div>
-    
+    <!-- Dialog de suppression-->
+      <div id="deleterow" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div  class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Annuler Alerte</h4>
+      </div>
+      <div class="modal-body">
+        <p>Voulez vous annuler cette alerte ? </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button class="btn btn-primary btn-sm" ng-click='confirmdelete()'>Confirmer</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
  </section>

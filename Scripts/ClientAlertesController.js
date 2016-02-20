@@ -1,5 +1,7 @@
 towingApp.registerCrtl('ClientAlertesController',function($scope, $http, $cookies) {
-$http({
+
+    $scope.getAllAlerte=function(){
+        $http({
             method: 'GET',
             url: 'http://localhost:4465/api/client/Alertes/'+$cookies.get("userId")
         })
@@ -14,5 +16,32 @@ $http({
         
         
         });
+        }
+        $scope.getAllAlerte();
+    
+    //ouvrir le message de confirmation de suppression
+$scope.deletealerte=function(id){
+    $scope.id=id;
+    $('#deleterow').modal('show');
+}
+$scope.confirmdelete=function(){
+    $http({
+                method: 'DELETE',
+                url: 'http://localhost:4465/api/Alerte/'+$scope.id
+                                
+            })
+            .success(function(data, status, headers, config) {
+                if (data.errors) {
+                    // Showing errors.
+                    $scope.notok='il ya un erreur';
+                } else {
+                    $scope.message='Suppression effectué avec succées';                   
+                    $scope.getAllAlerte();
+                  $('#deleterow').modal('hide');  
+                    $scope.message=''; 
+                }
+            
+            });
+}
     
 });

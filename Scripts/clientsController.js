@@ -65,7 +65,8 @@ $scope.confirmdelete=function(){
                 } else {
                     $scope.message='Suppression effectué avec succées';                   
                     $scope.getAllclient();
-                  $('#deleterow').modal('hide');  
+                  $('#deleterow').modal('hide'); 
+                    $scope.message=''; 
                 }
             
             });
