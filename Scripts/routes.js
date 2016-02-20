@@ -17,6 +17,10 @@ var towingApp = angular.module("towingApp", ['ngRoute','ngMap','ngCookies']);
           templateUrl: '../admin/clients.html',
           
       }).
+      when('/alertes_client', {
+          templateUrl: '../client/client_alertes.html',
+          
+      }).
       when('/remorqueurs', {
           templateUrl: '../admin/remorqueurs.html',
           

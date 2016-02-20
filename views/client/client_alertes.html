@@ -1,0 +1,53 @@
+<script src="../../Scripts/ClientAlertesController.js">
+</script>
+<section class="content-header">
+    <h1>
+            Espace Abonné          
+          </h1>
+</section>
+
+<!-- Main content -->
+<section class="content" ng-controller="ClientAlertesController">
+    <!-- Fenetre modifier -->
+<script type="text/ng-template" id="templateId">
+    <h1>Template heading</h1>
+    <p>Content goes here</p>
+</script>
+    <div class="box box-warning">
+        
+        <div class="box-header with-border">
+            <h3 class="box-title">Mes Alertes</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body" >
+  
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr >
+                        <th>Cin</th>
+                        <th>Date</th>
+                        <th>Etat</th>
+                        <th>Message</th>
+                        <th>Actions</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="alerte in myAlertes">
+                    <td>{{alerte.cin}}</td>
+                    <td>{{alerte.date}}</td>
+                    <td>{{alerte.etat}}</td>
+                    <td>{{alerte.message}}</td>                        
+                        <td>                        
+                        <button class="btn btn-primary btn-sm" ng-click='' ng-if="alerte.etat==='Nouveau'">Annuler</button>
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+    
+
+ </section>

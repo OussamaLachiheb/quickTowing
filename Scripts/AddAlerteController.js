@@ -14,6 +14,9 @@ towingApp.registerCrtl('AddAlerteController', function($scope, $http, $timeout, 
     mm='0'+mm
     } 
     $scope.alerte.date = dd+'/'+mm+'/'+yyyy;
+    //l'etat initial de l'alerte est nouveau
+    $scope.alerte.etat="Nouveau";
+    // getting latitude and longtitude
     NgMap.getMap().then(function(map) {                
         $scope.alerte.latitude = map.center.lat();
         $scope.alerte.longitude = map.center.lng();
