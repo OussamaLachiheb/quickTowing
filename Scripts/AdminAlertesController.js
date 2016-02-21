@@ -37,11 +37,87 @@ $scope.confirmdelete=function(){
                 } else {
                     $scope.message='Suppression effectué avec succées';                   
                     $scope.getAllAlerte();
-                  $('#deleterow').modal('hide');  
-                    $scope.message=''; 
+                
                 }
             
             });
 }
+
+$scope.editalerte = function (alerte, etat) {
+    alerte.etat = etat;
+    delete alerte.Client;
+    delete alerte.Remorqueur;
+    $http({
+        method: 'PUT',
+        url: 'http://localhost:4465/api/alerte/' + alerte.Id,
+        data: $.param(alerte), //forms user object
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    })
+     .success(function (data, status, headers, config) {
+         if (data.errors) {
+             // Showing errors.
+             $scope.notok = 'il ya un erreur';
+         } else {
+             $scope.getAllAlerte();
+
+         }
+         //scroll to top
+         window.scrollTo(0, 0);
+     });
+
+}
+
+
+$scope.findremorqueur = function (alerte) {
+    $scope.alerte = alerte;
+
+    $http({
+        method: 'GET',
+        url: 'http://localhost:4465/api/remorqueur',
+    })
+      .success(function(data, status, headers, config) {
+          if (data.errors) {
+              // Showing errors.
+              $scope.notok = 'il ya un erreur';
+          } else {
+              $scope.remorqueurs = data;
+
+          }
+      });
+
+    $('#findremorqueur').modal('show');
+}
+
+
+$scope.assignremorqueur= function()
+{
+    console.log($scope.ddlremorqueur);
+    $scope.alerte.etat = 'Recherche Termine';
+    $scope.alerte.matricule = $scope.ddlremorqueur;
+    delete $scope.alerte.Client;
+    delete $scope.alerte.Remorqueur;
+    $http({
+        method: 'PUT',
+        url: 'http://localhost:4465/api/alerte/' + $scope.alerte.Id,
+        data: $.param($scope.alerte), //forms user object
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    })
+     .success(function (data, status, headers, config) {
+         if (data.errors) {
+             // Showing errors.
+             $scope.notok = 'il ya un erreur';
+         } else {
+             $scope.getAllAlerte();
+             $('#findremorqueur').modal('hide');
+         }
+         //scroll to top
+         window.scrollTo(0, 0);
+     });
+}
+
     
 });

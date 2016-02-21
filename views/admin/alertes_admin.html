@@ -39,8 +39,12 @@
                     <td>{{alerte.etat}}</td>
                     <td>{{alerte.message}}</td> 
                     <td>{{alerte.matricule}}</td>  
-                        <td>                        
-                        <button class="btn btn-primary btn-sm" ng-click='deletealerte(alerte.Id)' ng-if="alerte.etat==='Nouveau'">Annuler</button>
+                        <td>
+                      
+                            <button class="btn btn-success btn-sm" ng-click='editalerte(alerte,"En Recherche de Remorqueur")' ng-show="alerte.etat==='Nouveau'">Commencer</button>
+                            <button class="btn btn-primary btn-sm" ng-click='findremorqueur(alerte)' ng-show="alerte.etat==='En Recherche de Remorqueur'">Trouver Remorqueur</button>
+                            <button class="btn btn-danger btn-sm" ng-click='editalerte(alerte,"Ferme")'  ng-show="alerte.etat==='Traitement termine'">Fermer</button>
+                           
                         </td>
                     </tr>
                 </tbody>
@@ -67,5 +71,24 @@
 
   </div>
 </div>
+    <!-- Dialog de suppression-->
+    <div id="findremorqueur" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Affecter Remorqueur</h4>
+                </div>
+                <div class="modal-body">
+                    <label>Choisir un remorqueur: </label>
+                    <select ng-model="ddlremorqueur" ng-options="remorqueur.matricule as remorqueur.nom+ ' ' + remorqueur.prenom for remorqueur in remorqueurs"></select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary btn-sm" ng-click='assignremorqueur()'>Confirmer</button>
+                </div>
+            </div>
 
+        </div>
+    </div>
  </section>
