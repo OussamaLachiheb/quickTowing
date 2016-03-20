@@ -75,7 +75,7 @@ $scope.findremorqueur = function (alerte) {
 
     $http({
         method: 'GET',
-        url: 'http://localhost:4465/api/remorqueur',
+        url: 'http://localhost:4465/api/AlerteRemorqueur/'+alerte.Id,
     })
       .success(function(data, status, headers, config) {
           if (data.errors) {

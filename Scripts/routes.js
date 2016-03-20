@@ -46,6 +46,10 @@ var towingApp = angular.module("towingApp", ['ngRoute','ngMap','ngCookies']);
           templateUrl: '../remorqueur/remorqueur_alertes.html',
           
       }).
+      when('/remorqueursentalertes', {
+          templateUrl: '../remorqueur/remorqueur_alertes_sent.html',
+          
+      }).
 
       otherwise({
           redirectTo: '/welcome'
